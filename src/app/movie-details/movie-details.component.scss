@@ -1,6 +1,18 @@
-.movie-details img {
-  width: 95%;
+.movie-details {
+  display: flex;
+  width: 70%;
   margin: 0 auto;
-  height: auto;
-  border-radius: 4px;
+  padding: 10px;
+  img {
+    height: 540px;
+  }
+  &--text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    width: 80%;
+    .title {
+      font-size: 24px;
+    }
+  }
 }

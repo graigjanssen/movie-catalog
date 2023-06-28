@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieService } from '../services/movie.service'; 
 import { Movie } from '../models/movie.model';
 
@@ -10,11 +11,13 @@ import { Movie } from '../models/movie.model';
 export class MovieListComponent {
   movies: Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private router: Router) {}
 
   ngOnInit() {
     this.movieService.fetchMovies().subscribe(data => {
       this.movies = data.results;
     });
-  }
+  } 
 }

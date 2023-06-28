@@ -7,5 +7,8 @@ import { Movie } from '../models/movie.model';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent {
-  @Input() movie!: Movie;
+  movie: Movie = {} as Movie;
+  ngOnInit() {
+    this.movie = history.state.movie;
+  }
 }

@@ -1,7 +1,9 @@
-<div class="movie-details">
-  <img [src]="'https://image.tmdb.org/t/p/w185/' + movie.poster_path" alt="{{ movie.title }}">
-  <h3 class="title">{{ movie.title }}</h3>
-  <p class="description">{{ movie.overview }}</p>
-  <p>Release Date: {{ movie.release_date }}</p>
-  <p>User Rating: {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
+<div *ngIf="movie" class="movie-details">
+  <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+  <div class="movie-details--text">
+    <h3 class="title">{{ movie.title }}</h3>
+    <p class="description">{{ movie.overview }}</p>
+    <p>Release Date: {{ movie.release_date }}</p>
+    <p>User Rating: {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
+  </div>
 </div>
